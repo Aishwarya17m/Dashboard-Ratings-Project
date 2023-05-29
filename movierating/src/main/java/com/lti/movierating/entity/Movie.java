@@ -1,8 +1,11 @@
 package com.lti.movierating.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Movie {
@@ -19,6 +22,8 @@ public class Movie {
 	
 	private String releaseDate;
 	
+//	@OneToMany(mappedBy = "movie")
+//	private List<Movie> movies;
 	
 
 	public int getMovieId() {
