@@ -1,5 +1,7 @@
 package com.lti.movierating.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +35,23 @@ public class UserServiceImpl implements UserService{
 	public User getUserById(int id) {
 		return userRepo.getById(id);
 	}
+
+	@Override
+	public boolean checkIfAlreadyExists(int userId, int movieId) {
+		// TODO Auto-generated method stub
+		List<Ratings> ratings = ratingsRepo.findAll();
+		
+		for(int i=0;i<ratings.size();i++) {
+			System.out.println(ratings.get(i).toString());
+			if(ratings.get(i).getMovie().getMovieId()==movieId && ratings.get(i).getUser().getUserId()==userId) {
+				System.out.println("Exists");
+				return true;
+			}
+		}
+		System.out.println("Doesn't exist");
+		return false;
+	}
+
+	
 	
 }

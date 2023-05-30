@@ -11,4 +11,6 @@ public interface UserService {
 	
 	public User getUserById(int id);
 	
+	public boolean checkIfAlreadyExists(int userId,int movieId);
+	
 }

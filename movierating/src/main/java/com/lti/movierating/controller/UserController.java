@@ -37,10 +37,17 @@ public class UserController {
 	@PostMapping("/rateMovie/{userId}/{movieId}")
 	public String rateMovie( @RequestBody Ratings rating, @PathVariable("userId") int userId, @PathVariable("movieId") int movieId) {
 		
-		rating.setUser(userService.getUserById(userId));
-		rating.setMovie(movieService.getMovieById(movieId));
 		
-		userService.addRatings(rating);
-		return "";
+		if(userService.checkIfAlreadyExists(userId,movieId)==false) {
+		
+			rating.setUser(userService.getUserById(userId));
+			rating.setMovie(movieService.getMovieById(movieId));
+		
+		
+			userService.addRatings(rating);
+			return "Rating added";
+		}
+		
+		return "Rating already exists from this user for this movie";
 	}
 }
