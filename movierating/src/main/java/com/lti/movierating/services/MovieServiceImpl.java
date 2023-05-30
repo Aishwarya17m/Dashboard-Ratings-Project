@@ -16,7 +16,7 @@ public class MovieServiceImpl implements MovieService{
 	public Movie getMovieById(int id) {
 		// TODO Auto-generated method stub
 		
-		return movieRepo.getById(id);
+		return movieRepo.getReferenceById(id);
 		
 	}
 
