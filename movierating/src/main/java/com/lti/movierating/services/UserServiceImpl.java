@@ -1,7 +1,5 @@
 package com.lti.movierating.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +30,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Optional<User> getUserById(int id) {
-		return userRepo.findById(id);
+	public User getUserById(int id) {
+		return userRepo.getById(id);
 	}
 	
 }

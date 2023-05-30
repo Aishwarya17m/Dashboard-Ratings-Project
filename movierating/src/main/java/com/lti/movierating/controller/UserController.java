@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.movierating.entity.Ratings;
 import com.lti.movierating.entity.User;
+
 import com.lti.movierating.services.MovieService;
 import com.lti.movierating.services.UserService;
 

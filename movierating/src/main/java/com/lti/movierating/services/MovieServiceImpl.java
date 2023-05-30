@@ -1,7 +1,5 @@
 package com.lti.movierating.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +13,11 @@ public class MovieServiceImpl implements MovieService{
 	private MovieRepository movieRepo;
 
 	@Override
-	public Optional<Movie> getMovieById(int id) {
+	public Movie getMovieById(int id) {
 		// TODO Auto-generated method stub
-		return movieRepo.findById(id);
+		
+		return movieRepo.getById(id);
+		
 	}
 
 	
