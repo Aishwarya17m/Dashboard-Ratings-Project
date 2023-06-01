@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 public class Admin {
 	
 	@Id
+
 	private int adminId;
 	
 	private String adminEmail;
