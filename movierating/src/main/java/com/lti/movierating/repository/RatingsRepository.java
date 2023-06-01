@@ -1,5 +1,6 @@
 package com.lti.movierating.repository;
 
+
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +10,5 @@ import com.lti.movierating.entity.Ratings;
 
 @Repository
 public interface RatingsRepository extends JpaRepository<Ratings, Integer>{
-	
+
 }

@@ -18,8 +18,8 @@ import com.lti.movierating.repository.UserRepository;
 @Service
 public class AdminServiceImpl implements AdminService{
 	
-	@Autowired
-	private AdminRepository adminRepo;
+//	@Autowired
+//	private AdminRepository adminRepo;
 	
 	@Autowired
 	private MovieRepository movieRepo;

@@ -3,6 +3,7 @@ package com.lti.movierating.entity;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -11,6 +12,7 @@ import jakarta.persistence.Table;
 public class User {
 
 	@Id
+	@GeneratedValue
 	private int userId;
 	
 	private String userName;
