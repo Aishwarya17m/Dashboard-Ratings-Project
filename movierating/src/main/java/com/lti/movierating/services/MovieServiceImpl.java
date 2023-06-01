@@ -30,12 +30,9 @@ public class MovieServiceImpl implements MovieService{
 	}
 
 	
-}
 
 		
-		return movieRepo.getById(id);
-		
-	}
+	
 
 	
 }

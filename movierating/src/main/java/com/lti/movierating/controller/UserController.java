@@ -1,6 +1,6 @@
 package com.lti.movierating.controller;
 
-<<<<<< Aishwarya
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.web.bind.annotation.PathVariable;

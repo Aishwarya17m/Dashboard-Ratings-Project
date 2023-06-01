@@ -27,6 +27,9 @@ public class AdminServiceImpl implements AdminService{
 	private RatingsRepository ratingsRepo;
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	private AdminRepository adminRepo;
 
 	@Override
 	public Movie addMovie(Movie movie) {

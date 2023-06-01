@@ -78,5 +78,5 @@ public class Ratings {
 	public String toString() {
 		return "Ratings [ratingsId=" + ratingsId + ", movie=" + movie + ", user=" + user + ", rating=" + rating + "]";
 	}	
-	
+}
 
