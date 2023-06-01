@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.movierating.entity.Admin;
 import com.lti.movierating.entity.Movie;
 import com.lti.movierating.entity.Ratings;
 import com.lti.movierating.entity.User;
@@ -55,6 +56,12 @@ public class AdminServiceImpl implements AdminService{
 	public List<Ratings> getAllRatings() {
 		// TODO Auto-generated method stub
 		return ratingsRepo.findAll();
+	}
+
+	@Override
+	public List<Admin> getAdmin() {
+		// TODO Auto-generated method stub
+		return adminRepo.findAll();
 	}
 
 	

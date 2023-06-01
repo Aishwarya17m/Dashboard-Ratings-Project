@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lti.movierating.entity.Admin;
 import com.lti.movierating.entity.Movie;
 import com.lti.movierating.entity.Ratings;
 import com.lti.movierating.entity.User;
@@ -38,6 +39,10 @@ public class AdminController {
 	@GetMapping("/getallusers")
 	public List<User> getAllUsers(){
 		return adminService.getAllUsers();
+	}
+	@GetMapping("/getAdmin")
+	public List<Admin> getAdmin(){
+		return adminService.getAdmin();
 	}
 	
 	@GetMapping("/getallratings")

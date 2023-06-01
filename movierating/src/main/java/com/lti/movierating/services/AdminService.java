@@ -1,5 +1,6 @@
 package com.lti.movierating.services;
 
+import com.lti.movierating.entity.Admin;
 import com.lti.movierating.entity.Movie;
 import com.lti.movierating.entity.Ratings;
 import com.lti.movierating.entity.User;
@@ -18,4 +19,6 @@ public interface AdminService {
 	public List<Ratings> getAllRatings();
 
 	public List<User> getAllUsers();
+
+	public List<Admin> getAdmin();
 }
