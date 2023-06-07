@@ -80,5 +80,5 @@ public class Ratings {
 		return "Ratings [ratingsId=" + ratingsId + ", movie=" + movie + ", user=" + user + ", rating=" + rating + "]";
 	}	
 }
-	
+
 
