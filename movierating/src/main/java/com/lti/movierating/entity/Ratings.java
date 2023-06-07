@@ -12,6 +12,7 @@ import jakarta.persistence.OneToOne;
 
 
 @Entity
+
 public class Ratings {
 
 	@Id
@@ -79,4 +80,5 @@ public class Ratings {
 		return "Ratings [ratingsId=" + ratingsId + ", movie=" + movie + ", user=" + user + ", rating=" + rating + "]";
 	}	
 }
+
 

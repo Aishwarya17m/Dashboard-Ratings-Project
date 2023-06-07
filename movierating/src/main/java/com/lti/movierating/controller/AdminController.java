@@ -30,6 +30,12 @@ public class AdminController {
 		return "Movie added";
 	}
 	
+	@PostMapping("/addAdmin")
+	public String addAdmin(@RequestBody Admin admin) {
+		adminService.addAdmin(admin);
+		return "Admin added";
+	}
+	
 	@GetMapping("/getallmovies")
 	public List<Movie> getAllMovies(){
 		return adminService.getAllMovies();

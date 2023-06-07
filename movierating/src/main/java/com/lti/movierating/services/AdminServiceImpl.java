@@ -18,8 +18,8 @@ import com.lti.movierating.repository.UserRepository;
 @Service
 public class AdminServiceImpl implements AdminService{
 	
-//	@Autowired
-//	private AdminRepository adminRepo;
+	@Autowired
+	private AdminRepository adminRepo;
 	
 	@Autowired
 	private MovieRepository movieRepo;
@@ -35,6 +35,11 @@ public class AdminServiceImpl implements AdminService{
 	public Movie addMovie(Movie movie) {
 		// TODO Auto-generated method stub
 		return movieRepo.save(movie);
+	}
+	@Override
+	public Admin addAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		return adminRepo.save(admin);
 	}
 
 	@Override

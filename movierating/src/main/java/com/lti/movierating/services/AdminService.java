@@ -21,4 +21,6 @@ public interface AdminService {
 	public List<User> getAllUsers();
 
 	public List<Admin> getAdmin();
+
+	public Admin addAdmin(Admin admin);
 }

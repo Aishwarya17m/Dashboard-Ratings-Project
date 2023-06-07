@@ -1,12 +1,13 @@
 package com.lti.movierating.services;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.lti.movierating.entity.Movie;
 import com.lti.movierating.entity.Ratings;
 import com.lti.movierating.entity.User;
 import com.lti.movierating.repository.RatingsRepository;
@@ -54,6 +55,55 @@ public class UserServiceImpl implements UserService{
 		return false;
 	}
 
+
 	
+
+	@Override
+	public List<Ratings> getRatingsByUser(int id) {
+		// TODO Auto-generated method stub
+		List<Ratings> ratings = ratingsRepo.findAll();
+		List<Ratings> ratedMovies = new ArrayList<Ratings>();
+		
+		for(int i=0;i<ratings.size();i++) {
+			if(ratings.get(i).getUser().getUserId()==id) {
+				ratedMovies.add(ratings.get(i));
+			}
+		}
+		
+		return ratedMovies;
+	}
 	
+	@Override
+	public List<Ratings> getRatingsByMovie(int id) {
+		// TODO Auto-generated method stub
+		List<Ratings> ratings = ratingsRepo.findAll();
+		List<Ratings> ratedMovies = new ArrayList<Ratings>();
+		
+		for(int i=0;i<ratings.size();i++) {
+			if(ratings.get(i).getMovie().getMovieId()==id) {
+				ratedMovies.add(ratings.get(i));
+			}
+		}
+		return ratedMovies;
+		
+	}
+	
+@Override
+public float getMovieRating(int id) {
+	// TODO Auto-generated method stub
+	
+	List<Ratings> ratings = ratingsRepo.findAll();
+	float movieRatings=0;
+	int total=0;
+	
+	for(int i=0;i<ratings.size();i++) {
+		if(ratings.get(i).getMovie().getMovieId()==id) {
+			movieRatings+=ratings.get(i).getRating();
+			total+=1;
+		}
+		
+	}
+	
+	return movieRatings/total;
+}
 }
