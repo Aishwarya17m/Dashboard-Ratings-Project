@@ -71,9 +71,22 @@ public class UserController {
 		
 		return "Rating already exists from this user for this movie";
 	}
+	@GetMapping("/getRatedMovies/{userId}")
+	public List<Ratings> getRatingsByUser(@PathVariable("userId") int userId){
 		
-	
-	
+		return userService.getRatingsByUser(userId);
+		
+	}
+	@GetMapping("/getRateMovies/{movieId}")
+	public List<Ratings> getRatingsByMovie(@PathVariable("movieId") int movieId){
+		
+		return userService.getRatingsByMovie(movieId);
+		
+	}
+	@GetMapping("/getMovieRating/{movieId}")
+	public float getMovieRating(@PathVariable("movieId") int movieId) {
+		return userService.getMovieRating(movieId);
+	}
 	
 	
 }

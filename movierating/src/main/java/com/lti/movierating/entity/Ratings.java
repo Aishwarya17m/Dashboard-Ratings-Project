@@ -12,6 +12,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
+
 public class Ratings {
 
 	@Id

@@ -1,5 +1,6 @@
 package com.lti.movierating.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.lti.movierating.entity.Movie;
@@ -16,6 +17,13 @@ public interface UserService {
 	public User getUserById(int id);
 
 	boolean checkIfAlreadyExists(int userId, int movieId);
+
+
+
+	public List<Ratings> getRatingsByUser(int userId);
+
+	List<Ratings> getRatingsByMovie(int id);
+	public float getMovieRating(int id);
 	
 	
 

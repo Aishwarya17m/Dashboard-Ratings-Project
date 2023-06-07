@@ -33,6 +33,11 @@ public class AdminServiceImpl implements AdminService{
 		// TODO Auto-generated method stub
 		return movieRepo.save(movie);
 	}
+	@Override
+	public Admin addAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		return adminRepo.save(admin);
+	}
 
 	@Override
 	public List<Movie> getAllMovies() {

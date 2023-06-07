@@ -1,13 +1,14 @@
 package com.lti.movierating.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
 public class Admin {
 	
 	@Id
-
+	@GeneratedValue
 	private int adminId;
 	
 	private String adminEmail;
