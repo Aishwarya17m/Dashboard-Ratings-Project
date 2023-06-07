@@ -1,5 +1,6 @@
 package com.lti.movierating.services;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +19,7 @@ public class MovieServiceImpl implements MovieService{
 	@Override
 	public Movie getMovieById(int id) {
 		// TODO Auto-generated method stub
+
 		return movieRepo.getReferenceById(id);
 	}
 
@@ -28,4 +30,13 @@ public class MovieServiceImpl implements MovieService{
 	}
 
 	
-}
+
+
+		
+	
+		
+	}
+
+	
+
+

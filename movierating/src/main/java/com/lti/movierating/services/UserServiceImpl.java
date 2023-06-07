@@ -85,6 +85,7 @@ public class UserServiceImpl implements UserService{
 			}
 		}
 		return ratedMovies;
+		
 	}
 	
 @Override
