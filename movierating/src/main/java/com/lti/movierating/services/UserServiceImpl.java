@@ -84,7 +84,6 @@ public class UserServiceImpl implements UserService{
 				ratedMovies.add(ratings.get(i));
 			}
 		}
-		
 		return ratedMovies;
 	}
 	
