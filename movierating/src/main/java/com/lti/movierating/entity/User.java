@@ -5,6 +5,7 @@ package com.lti.movierating.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
 
 @Entity
@@ -63,6 +64,13 @@ public class User {
 		this.userName = userName;
 		this.userEmail = userEmail;
 		this.password = password;
+	}
+
+
+
+	public User(int userId) {
+		super();
+		this.userId = userId;
 	}
 
 	@Override

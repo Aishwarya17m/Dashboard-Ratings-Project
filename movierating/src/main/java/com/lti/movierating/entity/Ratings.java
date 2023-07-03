@@ -9,18 +9,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+
 @Entity
+
 public class Ratings {
 
 	@Id
 	@GeneratedValue
 	private int ratingsId;
 	
-	@ManyToOne(cascade = CascadeType.ALL,targetEntity = Movie.class)
+
+	@ManyToOne(targetEntity = Movie.class)
 	@JoinColumn(name="movieId", nullable = false)
 	private Movie movie;
 	
-	@ManyToOne(cascade = CascadeType.ALL,targetEntity = User.class)
+
+	@ManyToOne(targetEntity = User.class)
 	@JoinColumn(name = "userId",nullable = false)
 	private User user;
 	
@@ -74,6 +78,6 @@ public class Ratings {
 	public String toString() {
 		return "Ratings [ratingsId=" + ratingsId + ", movie=" + movie + ", user=" + user + ", rating=" + rating + "]";
 	}	
-	
-	
 }
+
+
