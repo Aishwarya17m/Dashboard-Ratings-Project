@@ -20,6 +20,7 @@ public class MovieServiceImpl implements MovieService{
 	public Movie getMovieById(int id) {
 		// TODO Auto-generated method stub
 
+
 		return movieRepo.getReferenceById(id);
 	}
 
@@ -27,6 +28,9 @@ public class MovieServiceImpl implements MovieService{
 	public Optional<Movie> findMovieById(int id) {
 		// TODO Auto-generated method stub
 	return movieRepo.findById(id);
+
+		
+
 	}
 
 	

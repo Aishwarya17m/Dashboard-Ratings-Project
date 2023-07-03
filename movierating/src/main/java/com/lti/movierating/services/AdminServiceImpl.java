@@ -10,7 +10,9 @@ import com.lti.movierating.entity.Admin;
 import com.lti.movierating.entity.Movie;
 import com.lti.movierating.entity.Ratings;
 import com.lti.movierating.entity.User;
+
 import com.lti.movierating.repository.AdminRepository;
+
 import com.lti.movierating.repository.MovieRepository;
 import com.lti.movierating.repository.RatingsRepository;
 import com.lti.movierating.repository.UserRepository;
@@ -23,13 +25,19 @@ public class AdminServiceImpl implements AdminService{
 	
 	@Autowired
 	private MovieRepository movieRepo;
+
 	@Autowired
 	private RatingsRepository ratingsRepo;
+
 	@Autowired
 	private UserRepository userRepo;
 	
 	@Autowired
+
 	private AdminRepository adminRepo;
+
+	private RatingsRepository ratingsRepo;
+
 
 	@Override
 	public Movie addMovie(Movie movie) {
@@ -49,12 +57,14 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
+
 	public Optional<Ratings> getRating(int mid) {
 		// TODO Auto-generated method stub
 		return ratingsRepo.findById(mid);
 	}
 
 	@Override
+
 	public List<User> getAllUsers() {
 		// TODO Auto-generated method stub
 		return userRepo.findAll();
@@ -65,6 +75,7 @@ public class AdminServiceImpl implements AdminService{
 		// TODO Auto-generated method stub
 		return ratingsRepo.findAll();
 	}
+
 
 	@Override
 	public List<Admin> getAdmin() {
