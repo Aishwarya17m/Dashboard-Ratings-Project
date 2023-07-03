@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -54,5 +56,15 @@ public class AdminController {
 	@GetMapping("/getallratings")
 	public List<Ratings> getAllRatings(){
 		return adminService.getAllRatings();
+	}
+	
+	@PutMapping("/editMovie/{movieId}")
+	public String editMovie(@RequestBody Movie movie, @PathVariable int movieId) {
+		return adminService.editMovie(movie,movieId);
+	}
+	
+	@PostMapping("/adminLogin")
+	public String adminLogin(@RequestBody Admin admin) {
+		return adminService.adminLogin(admin);
 	}
 }

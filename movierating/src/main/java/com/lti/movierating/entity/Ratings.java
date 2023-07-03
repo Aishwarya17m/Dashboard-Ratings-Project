@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 
 
 @Entity
@@ -20,12 +19,12 @@ public class Ratings {
 	private int ratingsId;
 	
 
-	@ManyToOne(cascade = CascadeType.ALL,targetEntity = Movie.class)
+	@ManyToOne(targetEntity = Movie.class)
 	@JoinColumn(name="movieId", nullable = false)
 	private Movie movie;
 	
 
-	@ManyToOne(cascade = CascadeType.ALL,targetEntity = User.class)
+	@ManyToOne(targetEntity = User.class)
 	@JoinColumn(name = "userId",nullable = false)
 	private User user;
 	

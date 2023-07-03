@@ -58,21 +58,26 @@ public class UserServiceImpl implements UserService{
 
 	
 
-	@Override
-	public List<Ratings> getRatingsByUser(int id) {
-		// TODO Auto-generated method stub
-		List<Ratings> ratings = ratingsRepo.findAll();
-		List<Ratings> ratedMovies = new ArrayList<Ratings>();
+//	@Override
+//	public List<Ratings> getRatingsByUser(int id) {
+//		// TODO Auto-generated method stub
+//		List<Ratings> ratings = ratingsRepo.findAll();
+//		List<Ratings> ratedMovies = new ArrayList<Ratings>();
+//		
+//		for(int i=0;i<ratings.size();i++) {
+//			if(ratings.get(i).getUser().getUserId()==id) {
+//				ratedMovies.add(ratings.get(i));
+//			}
+//		}
+//		
+//		return ratedMovies;
+//	}
+@Override
+public List<Ratings> getRatingsByUser(User userId){
+	List<Ratings> r=ratingsRepo.findByUser(userId);
+	return r;
 		
-		for(int i=0;i<ratings.size();i++) {
-			if(ratings.get(i).getUser().getUserId()==id) {
-				ratedMovies.add(ratings.get(i));
-			}
-		}
-		
-		return ratedMovies;
 	}
-	
 	@Override
 	public List<Ratings> getRatingsByMovie(int id) {
 		// TODO Auto-generated method stub
@@ -87,23 +92,91 @@ public class UserServiceImpl implements UserService{
 		return ratedMovies;
 		
 	}
-	
-@Override
-public float getMovieRating(int id) {
-	// TODO Auto-generated method stub
-	
-	List<Ratings> ratings = ratingsRepo.findAll();
-	float movieRatings=0;
-	int total=0;
-	
-	for(int i=0;i<ratings.size();i++) {
-		if(ratings.get(i).getMovie().getMovieId()==id) {
+
+//@Override
+//public float getMovieRating(int id) {
+//	// TODO Auto-generated method stub
+//	
+//	List<Ratings> ratings = ratingsRepo.findAll();
+//	float movieRatings=0;
+//	int total=0;
+//	
+//	for(int i=0;i<ratings.size();i++) {
+//		if(ratings.get(i).getMovie().getMovieId()==id) {
+//			movieRatings+=ratings.get(i).getRating();
+//			total+=1;
+//		}
+//		
+//	}
+//	
+//	return movieRatings/total;
+//}
+	@Override
+	public float getMovieRating(Movie id) {
+		float movieRatings=0;
+		int total=0;
+		List<Ratings> ratings = ratingsRepo.findByMovie(id);
+		for(int i=0;i<ratings.size();i++) {
 			movieRatings+=ratings.get(i).getRating();
 			total+=1;
 		}
-		
+		return movieRatings/total;
 	}
+@Override
+public String deleteRating(int ratingsId) {
+	// TODO Auto-generated method stub
 	
-	return movieRatings/total;
+	
+	ratingsRepo.deleteById(ratingsId);
+	
+	return "Deleted";
 }
+
+@Override
+public String updateRating(Ratings rating, int ratingsId) {
+	// TODO Auto-generated method stub
+	
+	
+	Ratings rr=ratingsRepo.getReferenceById(ratingsId);
+
+	
+	rr.setRating(rating.getRating());
+	ratingsRepo.save(rr);
+	
+	return "updated";
+			
+			
+}
+
+@Override
+public String userLogin(User user) {
+
+User u=userRepo.findByUserEmail(user.getUserEmail());
+
+if(userRepo.existsByUserEmail(user.getUserEmail())) {
+if(u.getPassword().equals(user.getPassword())) {
+	return u.getUserId()+","+"login done";
+}
+else {
+return "invalid login";
+}
+
+}
+
+else {
+	return "user not registered";
+}
+}
+@Override
+public boolean existsByEmail(String userEmail) {
+	// TODO Auto-generated method stub
+	return userRepo.existsByUserEmail(userEmail);
+}
+
+@Override
+public List<User> getAllUsers() {
+	// TODO Auto-generated method stub
+	return userRepo.findAll();
+}
+
 }

@@ -21,6 +21,7 @@ public interface AdminService {
 	public List<User> getAllUsers();
 
 	public List<Admin> getAdmin();
-
+	public String adminLogin(Admin admin);
 	public Admin addAdmin(Admin admin);
+	public String editMovie(Movie movie, int movieId);
 }

@@ -18,16 +18,30 @@ public interface UserService {
 	public Ratings addRatings(Ratings rating);
 	
 	public User getUserById(int id);
+	
+	public List<User> getAllUsers();
 
 
 	boolean checkIfAlreadyExists(int userId, int movieId);
 
 
 
-	public List<Ratings> getRatingsByUser(int userId);
+	public List<Ratings> getRatingsByUser(User userId);
+	
 
 	List<Ratings> getRatingsByMovie(int id);
-	public float getMovieRating(int id);
+
+	
+	public float getMovieRating(Movie movieId);
+	
+	public String deleteRating(int ratingsId);
+	public String updateRating(Ratings rating,int ratingsId);
+	
+	public String userLogin(User user);
+	public boolean existsByEmail(String userRmail);
+
+	
+	
 	
 	
 
