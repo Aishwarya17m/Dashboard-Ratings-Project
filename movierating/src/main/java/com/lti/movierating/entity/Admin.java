@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 @Entity
 public class Admin {
 	
+	//abc
+	
 	@Id
 	@GeneratedValue
 	private int adminId;
