@@ -6,8 +6,6 @@ import jakarta.persistence.Id;
 @Entity
 public class Admin {
 	
-	//abc
-	
 	@Id
 	private int adminId;
 	

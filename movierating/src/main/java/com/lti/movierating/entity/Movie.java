@@ -19,8 +19,6 @@ public class Movie {
 	
 	private String releaseDate;
 	
-//	@OneToMany(mappedBy = "movie")
-//	private List<Movie> movies;
 	
 
 	public int getMovieId() {
